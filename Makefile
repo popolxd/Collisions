@@ -1,7 +1,7 @@
 NAME = main
 SRCDIR = ./source
 
-RAYLIB = ./libs/raylib-5.0_win64_mingw-w64
+# RAYLIB = ./libs/raylib-5.0_win64_mingw-w64
 CFILES := $(wildcard $(SRCDIR)/*.c)
 
 LINUX_CC = gcc
@@ -36,12 +36,12 @@ $(LINUX_OBJDIR)/%.o:$(SRCDIR)/%.c
 # $(NAME).exe: $(WIN_OFILES)
 # 	$(WIN_CC) -o $(NAME).exe $^ $(WIN_INCL_FLAGS) $(WIN_LINK_FLAGS) 
 
-$(WIN_OBJDIR)/%.o:$(SRCDIR)/%.c
-	$(WIN_CC) $(CFLAGS) -o $@ -c $(WIN_INCL_FLAGS) $<
+# $(WIN_OBJDIR)/%.o:$(SRCDIR)/%.c
+# 	$(WIN_CC) $(CFLAGS) -o $@ -c $(WIN_INCL_FLAGS) $<
 
 clean:
 	@echo "\033[1;31m ~> Cleaning objects files and executables\033[1;0m"
-	-rm $(LINUX_OBJDIR)/*.o main main.exe
+	-rm $(LINUX_OBJDIR)/*.o main
 
 git:
 	make clean
